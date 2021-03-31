@@ -1,0 +1,18 @@
+# code-server (vscode on web)
+# Url "https://github.com/cdr/code-server"
+
+version: '3.7'
+services:
+  code-server:
+    image: codercom/code-server:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      # Config path
+      - type: bind
+        source: $HOME/.config
+        target: /home/coder/.config
+      # Start path
+      - type: bind
+        source: $PWD
+        target: /home/coder/project
