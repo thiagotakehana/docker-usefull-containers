@@ -1,0 +1,13 @@
+# docker-android (android emulator running on docker with remote control)
+# Url "https://github.com/budtmo/docker-android"
+
+version: '3.7'
+services:
+  docker-android:
+    image: budtmo/docker-android-x86-8.1
+    ports:
+      - "6080:6080"
+      - "5554:5554"
+      - "5555:5555"
+    environment: 
+      - DEVICE="Samsung Galaxy S6"
